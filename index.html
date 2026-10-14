@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استراتيجية التسويق الرقمي والنمو المتكامل | KARA Duo × KAAF Group</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cairo, IBM Plex Sans Arabic & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Pro CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kara: {
+                            plumDarkest: '#0c0712',
+                            plumDark: '#140c1e',
+                            plumCard: '#1d122b',
+                            plumHover: '#2a193e',
+                            border: '#35214d',
+                            borderLight: '#513277',
+                            mauve: '#9333ea',
+                            mauveLight: '#c084fc',
+                            mauveSoft: '#e9d5ff',
+                            lilac: '#d8b4fe',
+                            rose: '#f43f5e',
+                            roseSoft: '#fecdd3',
+                            champagne: '#d4af37',
+                            champagneLight: '#fde68a',
+                            platinum: '#f1f5f9'
+                        },
+                        kaaf: {
+                            blue: '#0A4C86',
+                            blueLight: '#1C75C8',
+                            blueDeep: '#05233E',
+                            cyan: '#06B6D4',
+                            cyanLight: '#67E8F9',
+                            green: '#00875A',
+                            greenLight: '#00B377'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        ibm: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'kara-glow': '0 0 50px -10px rgba(168, 85, 247, 0.35)',
+                        'rose-glow': '0 0 45px -10px rgba(244, 63, 94, 0.3)',
+                        'gold-glow': '0 0 40px -10px rgba(212, 175, 55, 0.3)',
+                        'beauty-card': '0 20px 45px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #0c0712;
+            color: #F1F5F9;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #beauty-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.75;
+        }
+
+        .kara-ribbon {
+            background: linear-gradient(90deg, #9333ea 0%, #c084fc 25%, #f43f5e 50%, #d8b4fe 75%, #d4af37 100%);
+            height: 3px;
+        }
+
+        .glass-panel {
+            background: rgba(20, 12, 30, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(81, 50, 119, 0.7);
+        }
+
+        .beauty-card {
+            background: linear-gradient(145deg, rgba(29, 18, 43, 0.9) 0%, rgba(16, 9, 25, 0.96) 100%);
+            border: 1px solid rgba(65, 40, 95, 0.75);
+            backdrop-filter: blur(14px);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .beauty-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(192, 132, 252, 0.65);
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(168, 85, 247, 0.25);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.25s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #c084fc;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-item-active::after {
+            width: 100%;
+        }
+        .nav-item-active {
+            color: #e9d5ff !important;
+        }
+
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .animate-pulse-subtle {
+            animation: pulse-subtle 3.5s ease-in-out infinite;
+        }
+
+        @keyframes float-badge {
+            0%, 100% { transform: translateY(0px); box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.7), 0 0 18px rgba(168, 85, 247, 0.4); }
+            50% { transform: translateY(-6px); box-shadow: 0 18px 35px -5px rgba(0, 0, 0, 0.85), 0 0 28px rgba(168, 85, 247, 0.65); }
+        }
+        .animate-float-beauty {
+            animation: float-badge 4s ease-in-out infinite;
+        }
+
+        @keyframes float-wa {
+            0%, 100% { transform: translateY(0px) scale(1); box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.7), 0 0 18px rgba(37, 211, 102, 0.45); }
+            50% { transform: translateY(-6px) scale(1.03); box-shadow: 0 18px 35px -5px rgba(0, 0, 0, 0.85), 0 0 28px rgba(37, 211, 102, 0.7); }
+        }
+        .animate-float-wa {
+            animation: float-wa 4s ease-in-out infinite 0.7s;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-kara-mauve selection:text-white">
+
+    <!-- Interactive Beauty Particle Canvas -->
+    <canvas id="beauty-canvas"></canvas>
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 h-1 bg-white/5 z-50">
+        <div id="progressBar" class="kara-ribbon h-full w-0 transition-all duration-150"></div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-kara-plumDarkest/90 backdrop-blur-xl border-b border-kara-border px-4 sm:px-8 py-3 transition-all" id="headerNav">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Strategic Brand Identity -->
+            <a href="#cover" class="flex items-center gap-3.5 group">
+                <div class="w-12 h-12 rounded-2xl overflow-hidden border border-kara-mauveLight/50 p-1 bg-black/80 shrink-0 shadow-kara-glow transition-transform group-hover:scale-105 flex items-center justify-center">
+                    <img src="https://i.ibb.co/JwXvMNpN/Karaduo.jpg" alt="KARA Duo Logo" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://placehold.co/100x100/1d122b/c084fc?text=KARA+Duo'">
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-base font-black text-white tracking-wide font-ibm">KARA Duo</span>
+                        <span class="text-xs text-kara-mauveLight font-bold">| كارا دو</span>
+                        <span class="text-xs text-gray-500 font-bold">×</span>
+                        <span class="text-[11px] font-bold text-kaaf-cyanLight bg-kaaf-blue/30 px-2 py-0.5 rounded-md border border-kaaf-blue/40 font-ibm">KAAF Group</span>
+                    </div>
+                    <p class="text-[10px] text-gray-400 font-medium">Beauty & Cosmetics Growth Proposal • 3 Months</p>
+                </div>
+            </a>
+
+            <!-- Desktop Executive Menu -->
+            <nav class="hidden 2xl:flex items-center gap-3.5 text-[11px] font-bold text-gray-300">
+                <a href="#cover" class="nav-link py-1 hover:text-white">المقدمة</a>
+                <a href="#strategic-vision" class="nav-link py-1 hover:text-white">الرؤية والفرصة</a>
+                <a href="#product-portfolio" class="nav-link py-1 hover:text-white">فئات المنتجات</a>
+                <a href="#integrated-system" class="nav-link py-1 hover:text-kara-mauveLight font-bold">المنظومة المتكاملة</a>
+                <a href="#social-strategy" class="nav-link py-1 hover:text-white">السوشيال ميديا</a>
+                <a href="#paid-ads" class="nav-link py-1 hover:text-white">الحملات الإعلانية</a>
+                <a href="#influencer-strategy" class="nav-link py-1 hover:text-white">المشاهير وصناع المحتوى</a>
+                <a href="#influencer-packages" class="nav-link py-1 hover:text-white">باقات المشاهير</a>
+                <a href="#customer-journey" class="nav-link py-1 hover:text-white">رحلة العميل</a>
+                <a href="#roadmap" class="nav-link py-1 hover:text-white">خطة الـ 3 أشهر</a>
+                <a href="#dashboard-kpis" class="nav-link py-1 hover:text-white">المؤشرات والتقارير</a>
+                <a href="#investment" class="nav-link py-1 hover:text-kara-champagneLight font-bold">العرض المالي</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="#investment" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-kara-mauve/25 hover:bg-kara-mauve/45 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 shadow-sm transition">
+                    <i class="fa-solid fa-receipt text-xs text-kara-champagneLight"></i>
+                    <span>العرض المالي المعتمد</span>
+                </a>
+                <button id="mobileMenuBtn" aria-label="القائمة" class="2xl:hidden text-gray-300 hover:text-white p-2 rounded-xl bg-white/5 border border-white/10 focus:outline-none">
+                    <i class="fa-solid fa-bars text-base" id="mobileIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileDrawer" class="hidden 2xl:hidden pt-4 pb-2 px-2 border-t border-kara-border/80 mt-3 space-y-1 text-xs font-semibold">
+            <a href="#cover" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">الغلاف التنفيذي للبراند</a>
+            <a href="#strategic-vision" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">الرؤية الاستراتيجية وفرصة النمو</a>
+            <a href="#product-portfolio" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">فئات منتجات KARA Duo المتنوعة</a>
+            <a href="#integrated-system" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-kara-mauveLight font-bold">منظومة النمو الثلاثية المتكاملة</a>
+            <a href="#social-strategy" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">إدارة السوشيال ميديا وهندسة المحتوى</a>
+            <a href="#paid-ads" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">الحملات الإعلانية المدفوعة (Media Buying)</a>
+            <a href="#influencer-strategy" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">التسويق عبر المشاهير وصناع المحتوى</a>
+            <a href="#influencer-packages" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">مقارنة باقات المشاهير (20 مقابل 50)</a>
+            <a href="#customer-journey" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">رحلة العميل من الاكتشاف إلى الشراء المتكرر</a>
+            <a href="#roadmap" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">خارطة التنفيذ المرحلية (3 أشهر)</a>
+            <a href="#dashboard-kpis" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">لوحة المؤشرات ونموذج المتابعة</a>
+            <a href="#investment" class="mobile-nav block py-2.5 px-3 rounded-lg bg-kara-mauve/30 text-kara-champagneLight font-bold">العرض المالي والهيكل الاستثماري</a>
+            <a href="#closing" class="mobile-nav block py-2 px-3 rounded-lg hover:bg-white/5 text-gray-300">الخاتمة وخطوات الشراكة</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+        <!-- ========================================================================= -->
+        <!-- 01 — COVER — EXECUTIVE TITLE & DEDICATION                                 -->
+        <!-- ========================================================================= -->
+        <section id="cover" class="relative rounded-[32px] overflow-hidden p-8 sm:p-14 lg:p-20 glass-panel border border-kara-mauveLight/40 shadow-kara-glow">
+            <div class="kara-ribbon absolute top-0 left-0 right-0"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-8 space-y-7">
+                    <!-- Recipient Tag -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-kara-mauve/25 border border-kara-mauveLight/40 text-kara-mauveSoft text-xs font-bold font-ibm">
+                        <i class="fa-solid fa-sparkles text-kara-rose"></i>
+                        <span>عرض استراتيجي تنفيذي مخصص • KARA Duo × KAAF Group</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-normal sm:leading-relaxed">
+                            استراتيجية النمو
+                            <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-l from-kara-mauveLight via-kara-rose to-kara-champagneLight pb-2">
+                                والتسويق الرقمي المتكامل
+                            </span>
+                        </h1>
+                        <p class="text-base sm:text-xl font-bold text-gray-300 font-ibm tracking-wide">
+                            حضور رقمي جذاب • حملات إعلانية عالية التحويل • تعاونات مؤثرين تبني الثقة والمبيعات
+                        </p>
+                    </div>
+
+                    <!-- Direct Recipient Dedication Card -->
+                    <div class="p-5 sm:p-6 rounded-2xl bg-black/50 border-r-4 border-kara-mauveLight border-y border-l border-white/5 space-y-2.5">
+                        <div class="flex items-center gap-2 text-xs font-bold text-kara-champagneLight font-ibm">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>موجه إلى إدارة علامة:</span>
+                        </div>
+                        <div class="text-lg sm:text-xl font-black text-white font-ibm flex items-center gap-3">
+                            <span>KARA Duo | كارا دو</span>
+                            <span class="text-xs px-2.5 py-0.5 rounded-md bg-kara-mauve/30 text-kara-mauveSoft border border-kara-mauveLight/30 font-normal">
+                                Beauty & Cosmetics Brand • Saudi Market
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-medium">
+                            ترتكز هذه الخطة على تأسيس منظومة تسويق رقمي ثلاثية متكاملة لعلامة <strong>«KARA Duo»</strong> داخل قطاع التجميل والعناية الشخصية في السوق السعودي؛ بهدف تقديم المنتجات بصورة أكثر فخامة وجاذبية، وتوسيع نطاق الوصول للجمهور المستهدف عبر الإعلانات الموجهة، وتفعيل قوة الإثبات الاجتماعي من خلال صناع المحتوى لزيادة الزيارات ومضاعفة التحويلات للمتجر الإلكتروني.
+                        </p>
+                    </div>
+
+                    <!-- Meta Row -->
+                    <div class="pt-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="p-3.5 rounded-2xl bg-black/50 border border-white/5 text-center">
+                            <span class="text-[11px] text-gray-400 block font-medium">الجهة المعدة للمشروع</span>
+                            <span class="text-sm font-bold text-white font-ibm">KAAF Group</span>
+                            <span class="text-xs text-kaaf-cyanLight block mt-0.5">Marketing • Tech • Media</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-black/50 border border-white/5 text-center">
+                            <span class="text-[11px] text-gray-400 block font-medium">مدة الخطة الأساسية</span>
+                            <span class="text-sm font-bold text-kara-mauveLight font-ibm">3 أشهر استراتيجية</span>
+                            <span class="text-xs text-gray-400 block mt-0.5">تأسيس • تسريع • نمو</span>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 p-3.5 rounded-2xl bg-black/50 border border-white/5 text-center">
+                            <span class="text-[11px] text-gray-400 block font-medium">المتجر الرسمي المعتمد</span>
+                            <a href="https://karaduo.com/" target="_blank" class="text-sm font-bold text-kara-champagneLight font-ibm hover:underline flex items-center justify-center gap-1.5 mt-0.5">
+                                <span>karaduo.com</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Visual Badge -->
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="w-full max-w-xs p-7 rounded-3xl beauty-card border border-kara-mauveLight/40 space-y-6 text-center shadow-kara-glow">
+                        <div class="w-24 h-24 mx-auto rounded-3xl overflow-hidden border-2 border-kara-mauveLight/60 p-1 bg-black/80 shadow-kara-glow">
+                            <img src="https://i.ibb.co/JwXvMNpN/Karaduo.jpg" alt="KARA Duo Official Brand Logo" class="w-full h-full object-cover rounded-2xl" onerror="this.src='https://placehold.co/120x120/1d122b/c084fc?text=KARA+Duo'">
+                        </div>
+                        <div class="space-y-2">
+                            <h2 class="text-base font-bold text-white font-ibm">Beauty & Cosmetics Growth</h2>
+                            <p class="text-xs text-gray-300 leading-relaxed font-normal">
+                                من حضور رقمي جذاب إلى تجربة علامة تجارية أقوى وفرص أكبر للنمو والمبيعات في السوق السعودي.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-white/10 text-xs text-kara-mauveSoft font-bold flex items-center justify-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-kara-rose animate-pulse"></span>
+                            <span>خطة استراتيجية واقعية ومبنية على البيانات</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 02 — STRATEGIC VISION & BEAUTY MARKET OPPORTUNITY                         -->
+        <!-- ========================================================================= -->
+        <section id="strategic-vision" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-mauve/20 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 font-ibm">الرؤية الاستراتيجية وفرصة السوق</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    من التواجد الرقمي إلى منظومة مبيعات متكاملة
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    استثمار الشغف الاستهلاكي العالي بمنتجات التجميل في السعودية عبر بناء تجربة شراء ملهمة
+                </p>
+            </div>
+
+            <!-- Central Strategic Statement Banner -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-kara-plumDark via-kara-plumCard to-kara-plumDark border border-kara-mauveLight/40 text-center space-y-4 shadow-kara-glow">
+                <span class="text-[10px] font-mono text-kara-champagneLight uppercase tracking-widest block font-bold">THE CORE GROWTH PHILOSOPHY</span>
+                <div class="text-lg sm:text-2xl font-black text-white font-ibm max-w-3xl mx-auto leading-relaxed">
+                    «من حضور رقمي جذاب إلى تجربة علامة تجارية أقوى وفرص أكبر للنمو والمبيعات»
+                </div>
+                <p class="text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    يعتمد نجاح منتجات التجميل والعناية على التناغم الوثيق بين ثلاثة محاور لا تنفصل: المحتوى الإبداعي يبرز جمالية وألوان المنتج واستخداماته اليومية، بينما تتكفل الإعلانات الممولة بالوصول الدقيق للجمهور الأكثر اهتماماً بالشراء، ويأتي دور صناع المحتوى والمشاهير ليمنحوا العميل الإثبات الواقعي والتجربة الحقيقية التي تبدد التردد وتسرّع قرار الشراء من المتجر الإلكتروني.
+                </p>
+            </div>
+
+            <!-- Market Realities Grid (4 Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-2 border-kara-mauveLight">
+                    <div class="w-10 h-10 rounded-xl bg-kara-mauve/25 text-kara-mauveLight flex items-center justify-center text-base font-bold">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">قوة الأثر البصري والمظهر</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        مستحضرات التجميل منتجات بصرية بامتياز؛ تحتاج إلى زوايا إضاءة ناعمة، واستعراض لتجانس الألوان والقوام (Swatches & Texture) لخلق رغبة الاقتناء الفورية.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-2 border-kara-rose">
+                    <div class="w-10 h-10 rounded-xl bg-kara-rose/20 text-kara-rose flex items-center justify-center text-base font-bold">
+                        <i class="fa-solid fa-heart-circle-check"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">أهمية التجربة الواقعية (Social Proof)</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        المستهلكة السعودية تبحث دائماً عن تجارب خبيرات التجميل وصانعات المحتوى قبل الشراء للتأكد من ثبات المنتج وملاءمته لدرجة بشرتها وروتينها اليومي.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-2 border-kara-champagneLight">
+                    <div class="w-10 h-10 rounded-xl bg-kara-champagne/20 text-kara-champagneLight flex items-center justify-center text-base font-bold">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">سلاسة تجربة المتجر الإلكتروني</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        تحويل المشاهدة إلى عملية بيع ناجحة يتطلب سهولة تصفح الفئات، وضوح خيارات الدفع، وسرعة الشحن لتعزيز تجربة العميل وزيادة معدلات تكرار الشراء.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-2 border-kara-lilac">
+                    <div class="w-10 h-10 rounded-xl bg-kara-mauve/20 text-kara-lilac flex items-center justify-center text-base font-bold">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">القياس المستمر والتحسين بالبيانات</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        لا مكان للافتراضات العشوائية؛ نجاح الحملات يرتكز على اختبار المنتجات الأكثر طلباً وإعادة توجيه الميزانيات للقنوات والإعلانات التي تحقق أعلى عائد تسويقي.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 03 — PRODUCT PORTFOLIO & BRAND ARCHITECTURE                               -->
+        <!-- ========================================================================= -->
+        <section id="product-portfolio" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-rose/20 text-kara-roseSoft text-xs font-bold border border-kara-rose/30 font-ibm">تنوع المنتجات والكتالوج</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    محفظة منتجات KARA Duo المتكاملة
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    بناء استراتيجية تسويقية تستثمر تنوع الفئات لتلبية كافة تطلعات الجمال والعناية اليومية
+                </p>
+            </div>
+
+            <!-- Categories Showcase Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="beauty-card p-4 rounded-2xl text-center space-y-2 border-t-2 border-kara-mauveLight">
+                    <div class="w-11 h-11 mx-auto rounded-xl bg-kara-mauve/25 text-kara-mauveSoft flex items-center justify-center text-base">
+                        <i class="fa-solid fa-wand-magic"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">الوجه والخدود</h3>
+                    <span class="text-[10px] text-kara-mauveLight font-mono block">Face & Cheeks</span>
+                    <p class="text-[11px] text-gray-400 leading-relaxed">
+                        كريمات الأساس، البلاشر، الكونتور، والهايلايتر لتوحيد البشرة وإشراقتها.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-4 rounded-2xl text-center space-y-2 border-t-2 border-kara-rose">
+                    <div class="w-11 h-11 mx-auto rounded-xl bg-kara-rose/20 text-kara-roseSoft flex items-center justify-center text-base">
+                        <i class="fa-solid fa-lips"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">الشفاه</h3>
+                    <span class="text-[10px] text-kara-rose font-mono block">Lips Collection</span>
+                    <p class="text-[11px] text-gray-400 leading-relaxed">
+                        أحمر الشفاه، الغلوسات، والمحددات بدرجات غنية وثبات عالي لكافة الإطلالات.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-4 rounded-2xl text-center space-y-2 border-t-2 border-kara-champagneLight">
+                    <div class="w-11 h-11 mx-auto rounded-xl bg-kara-champagne/20 text-kara-champagneLight flex items-center justify-center text-base">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">العيون والحواجب</h3>
+                    <span class="text-[10px] text-kara-champagneLight font-mono block">Eyes & Brows</span>
+                    <p class="text-[11px] text-gray-400 leading-relaxed">
+                        ظلال العيون، الآيلاينر، وأقلام ومحددات الحواجب الدقيقة للرسم والتهذيب.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-4 rounded-2xl text-center space-y-2 border-t-2 border-kara-lilac">
+                    <div class="w-11 h-11 mx-auto rounded-xl bg-kara-mauve/25 text-kara-lilac flex items-center justify-center text-base">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">الرموش والفرش</h3>
+                    <span class="text-[10px] text-kara-lilac font-mono block">Lashes & Brushes</span>
+                    <p class="text-[11px] text-gray-400 leading-relaxed">
+                        مجموعات الفرش الاحترافية ذات الشعيرات الناعمة والرموش الطبيعية المتقنة.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Strategic Brand Synergy Card -->
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-kara-mauveLight/30 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-white font-ibm flex items-center gap-2">
+                            <i class="fa-solid fa-spa text-kara-mauveLight"></i>
+                            <span>العناية بالبشرة وتكامل الروتين اليومي (Skincare & Beauty Synergy)</span>
+                        </h3>
+                        <p class="text-xs text-gray-400 mt-1">
+                            ربط منتجات الميك أب بمستحضرات العناية بالبشرة لخلق حزم مبيعات (Bundles) متكاملة ترفع متوسط قيمة سلة الشراء
+                        </p>
+                    </div>
+                    <span class="text-[11px] px-3 py-1 rounded-full bg-kara-mauve/30 text-kara-mauveSoft border border-kara-mauveLight/40 font-ibm">
+                        Cross-Selling Strategy
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-300">
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1.5">
+                        <strong class="text-white block font-ibm">1. تحضير البشرة والتهيئة:</strong>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            محتوى تعليمي يوضح أهمية العناية بالبشرة والترطيب قبل وضع المكياج لضمان إطلالة خالية من العيوب.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1.5">
+                        <strong class="text-white block font-ibm">2. حزم الإطلالات الكاملة (Full Look Kits):</strong>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            تجميع المنتجات التكميلية (كريم أساس + بلاشر + روج + فرشاة) في مجموعات تسويقية ملهمة للمناسبات والدوام.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1.5">
+                        <strong class="text-white block font-ibm">3. إبراز الجودة والمطابقة:</strong>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            تسليط الضوء على سلاسة الدمج، خفة القوام على البشرة، والمظهر النهائي الفاخر عبر لقطات قريبة (Close-ups).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 04 — INTEGRATED GROWTH ECOSYSTEM (3 PILLARS)                              -->
+        <!-- ========================================================================= -->
+        <section id="integrated-system" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-mauve/25 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 font-ibm">تكامل المنظومة التسويقية</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    ثلاثة محاور، تعمل ضمن منظومة واحدة
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    منظومة نمو متناغمة تعزز الحضور، تضاعف الوصول، وتوجه الحركة نحو المتجر الإلكتروني
+                </p>
+            </div>
+
+            <!-- Integrated Engine Framework Card -->
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-kara-mauveLight/40 space-y-8 relative overflow-hidden shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <!-- Pillar 1: Social Media -->
+                    <div class="beauty-card p-6 rounded-2xl space-y-3 border-t-4 border-kara-mauveLight">
+                        <div class="w-12 h-12 mx-auto rounded-2xl bg-kara-mauve/25 text-kara-mauveSoft text-xl flex items-center justify-center">
+                            <i class="fa-solid fa-camera-retro"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white font-ibm">1. المحتوى الإبداعي والسوشيال ميديا</h3>
+                        <span class="text-[10px] text-kara-mauveLight font-mono block font-bold">Brand Presence & Engagement</span>
+                        <p class="text-[11px] text-gray-300 leading-relaxed">
+                            يقدم منتجات KARA Duo بأسلوب فني جذاب، ويبني حضوراً متناسقاً يبرز تفاصيل المكياج ويعزز علاقة البراند اليومية بالجمهور.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 2: Paid Ads -->
+                    <div class="beauty-card p-6 rounded-2xl space-y-3 border-t-4 border-kara-rose">
+                        <div class="w-12 h-12 mx-auto rounded-2xl bg-kara-rose/20 text-kara-rose text-xl flex items-center justify-center">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white font-ibm">2. الحملات الإعلانية الممولة</h3>
+                        <span class="text-[10px] text-kara-rose font-mono block font-bold">Targeted Reach & Traffic</span>
+                        <p class="text-[11px] text-gray-300 leading-relaxed">
+                            توسّع دائرة الوصول للشرائح المهتمة بالتجميل في السعودية، وتختبر الرسائل والعروض، وتجلب حركة زيارات وطلبات موجهة للمتجر.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3: Influencers -->
+                    <div class="beauty-card p-6 rounded-2xl space-y-3 border-t-4 border-kara-champagneLight">
+                        <div class="w-12 h-12 mx-auto rounded-2xl bg-kara-champagne/20 text-kara-champagneLight text-xl flex items-center justify-center">
+                            <i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white font-ibm">3. المشاهير وصناع المحتوى</h3>
+                        <span class="text-[10px] text-kara-champagneLight font-mono block font-bold">Social Proof & Trust</span>
+                        <p class="text-[11px] text-gray-300 leading-relaxed">
+                            يقدمون المنتجات في سياقات وتجارب واقعية وإطلالات تجميلية حية تناسب متابعيهم، مما يمنح العلامة موثوقية عالية وسرعة انتشار.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Unified Funnel Flow Banner -->
+                <div class="p-6 rounded-2xl bg-gradient-to-r from-kara-plumDark via-black to-kara-plumDark border border-kara-mauveLight/40 space-y-4">
+                    <span class="text-[10px] font-mono text-kara-champagneLight uppercase font-bold tracking-wider block text-center">
+                        THE INTEGRATED CONVERSION FLOW
+                    </span>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-center text-xs">
+                        <div class="p-3 rounded-xl bg-kara-mauve/20 border border-kara-mauveLight/30 text-kara-mauveSoft font-bold">
+                            <i class="fa-solid fa-photo-film block mb-1 text-sm"></i>
+                            1. المحتوى الإبداعي
+                        </div>
+                        <div class="p-3 rounded-xl bg-kara-rose/20 border border-kara-rose/30 text-kara-roseSoft font-bold">
+                            <i class="fa-solid fa-bullseye block mb-1 text-sm"></i>
+                            2. إعلانات التوسيع
+                        </div>
+                        <div class="p-3 rounded-xl bg-kara-champagne/20 border border-kara-champagne/40 text-kara-champagneLight font-bold">
+                            <i class="fa-solid fa-users block mb-1 text-sm"></i>
+                            3. تجارب المؤثرين
+                        </div>
+                        <div class="p-3 rounded-xl bg-purple-950/60 border border-purple-600/40 text-purple-200 font-bold">
+                            <i class="fa-solid fa-cart-shopping block mb-1 text-sm"></i>
+                            4. المتجر الإلكتروني
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 font-black">
+                            <i class="fa-solid fa-chart-line-up block mb-1 text-sm"></i>
+                            5. القياس والتحسين
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-300 text-center max-w-3xl mx-auto leading-relaxed pt-1">
+                        تتكامل المنظومة بحيث يتم الاستفادة من أفضل مقاطع وتجارب صناع المحتوى وإعادة توظيفها كإعلانات ممولة عالية التأثير، مما يخفض تكلفة الاستحواذ على الزائر، ويوجه الحركة الشرائية مباشرة نحو المتجر الإلكتروني مع قياس دقيق لمصادر الزيارات والطلبات.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 05 — SERVICE 01: SOCIAL MEDIA MANAGEMENT (3 MONTHS)                       -->
+        <!-- ========================================================================= -->
+        <section id="social-strategy" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-mauve/20 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 font-ibm">الخدمة الأولى • 3 أشهر متواصلة</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    إدارة السوشيال ميديا وصناعة المحتوى الإبداعي
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    إدارة تسويقية وإبداعية متكاملة تحول الحسابات إلى واجهة ملهمة لعالم الجمال
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Track A: Strategy -->
+                <div class="beauty-card p-6 rounded-2xl space-y-4 border-t-4 border-kara-mauveLight flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-kara-mauve/25 text-kara-mauveSoft flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-compass-drafting text-base"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white font-ibm">أ. الاستراتيجية والتخطيط</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            مراجعة شخصية براند KARA Duo وتحديد نبرة الصوت ورسائل المنتجات لكل فئة:
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 pt-2 border-t border-white/10">
+                            <li>• تنظيم الرسائل التسويقية حسب فئات المكياج.</li>
+                            <li>• بناء تقويم محتوى شهري متوازن (Content Calendar).</li>
+                            <li>• تخطيط محتوى العروض والمناسبات والمواسم في السعودية.</li>
+                        </ul>
+                    </div>
+                    <span class="text-[10px] text-kara-mauveLight italic block pt-2">* تخطيط استراتيجي مرتبط بأهداف المتجر.</span>
+                </div>
+
+                <!-- Track B: Design & Visual Identity -->
+                <div class="beauty-card p-6 rounded-2xl space-y-4 border-t-4 border-kara-rose flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-kara-rose/20 text-kara-rose flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-palette text-base"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white font-ibm">ب. التصميم والإبداع الفني</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            إخراج بصري أنثوي فاخر يعكس روح الجمال ومتناسق مع هوية KARA Duo:
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 pt-2 border-t border-white/10">
+                            <li>• تصاميم إبراز تدرجات ألوان المنتجات وخصائصها.</li>
+                            <li>• تصاميم تفاعلية ومقارنات للمظهر والملمس.</li>
+                            <li>• قوالب مخصصة للعروض والباقات الموسمية بالمتجر.</li>
+                        </ul>
+                    </div>
+                    <span class="text-[10px] text-kara-roseSoft italic block pt-2">* الحفاظ على اتساق الألوان والخطوط.</span>
+                </div>
+
+                <!-- Track C: Video & Reels -->
+                <div class="beauty-card p-6 rounded-2xl space-y-4 border-t-4 border-kara-champagneLight flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-kara-champagne/20 text-kara-champagneLight flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-video text-base"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white font-ibm">ج. المحتوى المرئي والفيديوهات</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            ابتكار ومونتاج مقاطع فيديو قصيرة سريعة الانتشار لمنصات TikTok وInstagram وSnapchat:
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 pt-2 border-t border-white/10">
+                            <li>• سكريبتات وأفكار لطرق الاستخدام وتنسيق الإطلالات.</li>
+                            <li>• فيديوهات توضح تفاصيل الألوان على درجات البشرة المختلفة.</li>
+                            <li>• صياغة Hooks جذابة في الثواني الأولى لرفع معدل المشاهدة.</li>
+                        </ul>
+                    </div>
+                    <span class="text-[10px] text-kara-champagneLight italic block pt-2">* محتوى مصمم لخصائص كل منصة.</span>
+                </div>
+
+                <!-- Track D: Account Management -->
+                <div class="beauty-card p-6 rounded-2xl space-y-4 border-t-4 border-kara-lilac flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-kara-mauve/20 text-kara-lilac flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-sliders text-base"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white font-ibm">د. الجدولة وإدارة الحسابات</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            تنظيم وتنسيق نشر المواد ومتابعة تفاعل الجمهور وأداء المنشورات:
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 pt-2 border-t border-white/10">
+                            <li>• جدولة ونشر المنشورات في أوقات الذروة التفاعلية.</li>
+                            <li>• رصد تعليقات واستفسارات المتابعين حول المنتجات.</li>
+                            <li>• تقارير شهرية وتوصيات لتطوير المحتوى دورياً.</li>
+                        </ul>
+                    </div>
+                    <span class="text-[10px] text-kara-lilac italic block pt-2">* الكميات النهائية تُعتمد في خطة العمل.</span>
+                </div>
+            </div>
+
+            <!-- Value Callout -->
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/10 text-xs text-gray-300 flex items-center justify-between flex-wrap gap-2">
+                <span class="text-kara-mauveSoft font-bold">
+                    <i class="fa-solid fa-gem text-kara-champagneLight ml-1"></i> القيمة التجارية لـ KARA Duo:
+                </span>
+                <span class="text-gray-400">
+                    بناء هوية رقمية راقية ومتسقة تحول المتابعة إلى رغبة في الاقتناء، وتغذي الحملات الإعلانية بمحتوى مرئي عالي الجاذبية.
+                </span>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 06 — SERVICE 02: PAID ADVERTISING CAMPAIGNS (MEDIA BUYING - 3 MONTHS)     -->
+        <!-- ========================================================================= -->
+        <section id="paid-ads" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-rose/20 text-kara-roseSoft text-xs font-bold border border-kara-rose/30 font-ibm">الخدمة الثانية • 3 أشهر متواصلة</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    إدارة الحملات الإعلانية الممولة (Paid Advertising)
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    إدارة بيانات إعلانية ذكية: Testing → Data → Optimization → Scaling
+                </p>
+            </div>
+
+            <!-- Ad Funnel & Media Architecture Card -->
+            <div class="beauty-card p-6 sm:p-8 rounded-3xl space-y-6 border-t-4 border-kara-rose">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Funnel Flow -->
+                    <div class="space-y-3">
+                        <h3 class="text-base font-bold text-white font-ibm flex items-center gap-2">
+                            <i class="fa-solid fa-filter-circle-dollar text-kara-rose"></i>
+                            <span>مسار القمع الإعلاني والتحويل (The Beauty Ad Funnel)</span>
+                        </h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            توجيه الميزانيات عبر مراحل واضحة لاختبار الشرائح ومضاعفة العائد الإعلاني:
+                        </p>
+                        <div class="space-y-2 text-xs text-gray-300">
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+                                <span>1. Cold Audience (بناء الوعي والوصول)</span>
+                                <span class="text-[10px] text-gray-400">فيديوهات الإطلالات والتعريف بالبراند</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+                                <span>2. Consideration (الاهتمام بالمنتجات)</span>
+                                <span class="text-[10px] text-kara-mauveLight">زيارات صفحات منتجات الوجه والشفاه</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+                                <span>3. Retargeting (إعادة الاستهداف الذكي)</span>
+                                <span class="text-[10px] text-kara-roseSoft">استهداف زوار المتجر والمتفاعلين مع الحساب</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-kara-rose/20 border border-kara-rose/40 flex items-center justify-between font-bold text-white">
+                                <span>4. Conversion & Retention (الطلب وتكرار الشراء)</span>
+                                <span class="text-[10px] text-kara-champagneLight">إتمام الطلب وإعادة استهداف المشترين السابقين</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scope of Execution -->
+                    <div class="space-y-3">
+                        <h3 class="text-base font-bold text-white font-ibm flex items-center gap-2">
+                            <i class="fa-solid fa-bullseye text-kara-mauveLight"></i>
+                            <span>نطاق التخطيط والتنفيذ والتحسين الإعلاني</span>
+                        </h3>
+                        <div class="space-y-2.5 text-xs text-gray-300">
+                            <div class="p-3 rounded-xl bg-kara-plumDark border border-kara-border space-y-1">
+                                <strong class="text-white block font-ibm">توزيع المنصات الإعلانية المستهدفة:</strong>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">
+                                    إعداد وإدارة الحملات على المنصات الأكثر تأثيراً في قطاع الجمال السعودي: Meta (Instagram Ads) وTikTok وSnapchat مع إمكانية توظيف Google Search عند ملاءمته لنوايا البحث الشرائية.
+                                </p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-kara-plumDark border border-kara-border space-y-1">
+                                <strong class="text-white block font-ibm">القياس والتحسين المستمر (Optimization):</strong>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">
+                                    متابعة تكلفة النتيجة والنقرات، وتحليل جودة الزيارات الموجهة للمتجر، واختبار أكثر من مادة إعلانية ورسالة تسويقية لتوجيه الإنفاق تدريجياً نحو الإعلانات الأكثر كفاءة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Clarity Box -->
+                <div class="p-4 rounded-2xl bg-black/60 border border-kara-champagne/30 text-xs text-gray-300 flex items-center justify-between flex-wrap gap-2">
+                    <span class="text-kara-champagneLight font-bold">
+                        <i class="fa-solid fa-circle-exclamation text-kara-champagneLight ml-1"></i> إيضاح مالي وتنظيمي هام:
+                    </span>
+                    <span class="text-gray-300">
+                        مبلغ <strong>9,000 ريال سعودي</strong> يمثل أتعاب KAAF Group لإدارة وتخطيط وتحسين الحملات لمدة 3 أشهر، وتُدفع الميزانية الإعلانية للمنصات بصورة منفصلة بحسب الميزانية المعتمدة من العميل.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 07 — SERVICE 03: INFLUENCER MARKETING (20 VS 50 OPTIONS)                  -->
+        <!-- ========================================================================= -->
+        <section id="influencer-strategy" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-champagne/20 text-kara-champagneLight text-xs font-bold border border-kara-champagne/40 font-ibm">الخدمة الثالثة • خيارات متعددة</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    التسويق عبر المشاهير وصناع المحتوى
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    بناء الثقة وتوسيع اكتشاف العلامة التجارية عبر تجارب واقعية في سياقات الجمال والروتين اليومي
+                </p>
+            </div>
+
+            <!-- Two Campaign Options Comparison Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="influencer-packages">
+                <!-- Option 1: 20 Influencers -->
+                <div class="beauty-card p-6 sm:p-8 rounded-3xl space-y-5 border-t-4 border-kara-mauveLight flex flex-col justify-between shadow-kara-glow">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                            <div>
+                                <span class="text-[10px] font-mono font-bold text-kara-mauveLight uppercase tracking-wider block">OPTION 01</span>
+                                <h3 class="text-xl font-black text-white font-ibm">حملة مركزة — 20 مشهوراً</h3>
+                            </div>
+                            <span class="text-xs px-3 py-1 rounded-full bg-kara-mauve/30 text-kara-mauveSoft border border-kara-mauveLight/40 font-ibm">
+                                حملة مركزة
+                            </span>
+                        </div>
+
+                        <div class="space-y-2">
+                            <span class="text-xs text-gray-400 block font-medium">سعر إدارة الحملة:</span>
+                            <div class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-kara-mauveSoft to-kara-mauveLight font-ibm">
+                                14,000 <span class="text-sm font-bold text-kara-mauveSoft">ريال سعودي</span>
+                            </div>
+                            <p class="text-[11px] text-gray-400 leading-relaxed">
+                                تهدف إلى توسيع دائرة اكتشاف براند KARA Duo والوصول إلى جماهير نوعية عبر تعاونات مختارة مع صانعات محتوى وخبيرات مكياج مناسبات لقطاع التجميل.
+                            </p>
+                        </div>
+
+                        <ul class="text-xs text-gray-300 space-y-2 pt-2 border-t border-white/10">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-mauveLight text-xs"></i> <span>تحديد معايير الفرز وتوافق الجمهور المستهدف.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-mauveLight text-xs"></i> <span>توزيع التعاونات على المنتجات ذات الأولوية بالمتجر.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-mauveLight text-xs"></i> <span>تنسيق الأفكار الإبداعية ومراجعة جودة الطرح.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-mauveLight text-xs"></i> <span>تنظيم ومتابعة مواعيد النشر وروابط الخصم التتبعية.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-mauveLight text-xs"></i> <span>ملخص شامل لمؤشرات الوصول والتفاعل بعد انتهاء الحملة.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-gray-400 text-center">
+                        الهدف: بناء ثقة مركزة واختبار استجابة الجمهور لفئات المكياج الأساسية.
+                    </div>
+                </div>
+
+                <!-- Option 2: 50 Influencers -->
+                <div class="beauty-card p-6 sm:p-8 rounded-3xl space-y-5 border-t-4 border-kara-champagneLight flex flex-col justify-between shadow-gold-glow">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                            <div>
+                                <span class="text-[10px] font-mono font-bold text-kara-champagneLight uppercase tracking-wider block">OPTION 02</span>
+                                <h3 class="text-xl font-black text-white font-ibm">حملة انتشار واسع — 50 مشهوراً</h3>
+                            </div>
+                            <span class="text-xs px-3 py-1 rounded-full bg-kara-champagne/20 text-kara-champagneLight border border-kara-champagne/40 font-ibm">
+                                أوسع انتشاراً
+                            </span>
+                        </div>
+
+                        <div class="space-y-2">
+                            <span class="text-xs text-gray-400 block font-medium">سعر إدارة الحملة:</span>
+                            <div class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-kara-champagneLight to-kara-champagne font-ibm">
+                                30,000 <span class="text-sm font-bold text-kara-champagneLight">ريال سعودي</span>
+                            </div>
+                            <p class="text-[11px] text-gray-400 leading-relaxed">
+                                نطاق تسويقي موسع يستهدف إحداث انتشار واسع (Brand Buzz)، وتنويع مصادر الوصول، وظهور منتجات KARA Duo أمام شرائح نسائية متعددة في السعودية.
+                            </p>
+                        </div>
+
+                        <ul class="text-xs text-gray-300 space-y-2 pt-2 border-t border-white/10">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-champagneLight text-xs"></i> <span>توزيع واسع يغطي كافة فئات المتجر (وجه، شفاه، عيون، فرش).</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-champagneLight text-xs"></i> <span>جدول نشر ممتد يخلق استمرارية في ظهور البراند على مدار الشهرين.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-champagneLight text-xs"></i> <span>تنويع زوايا المحتوى (تعليمي، إطلالات سريعة، مقارنات، روتين).</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-champagneLight text-xs"></i> <span>متابعة دقيقة للأكواد وتحديد صناع المحتوى الأكثر جذباً للمبيعات.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kara-champagneLight text-xs"></i> <span>تقرير موسع يحدد أفضل شرائح المؤثرين للحملات القادمة.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-gray-400 text-center">
+                        الهدف: صناعة انتشار قوي وترسيخ اسم البراند كخيار تجميلي موثوق وشائع.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table Component -->
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-4">
+                <h3 class="text-base font-bold text-white font-ibm flex items-center gap-2">
+                    <i class="fa-solid fa-table-list text-kara-mauveLight"></i>
+                    <span>جدول المقارنة المعيارية بين خياري المشاهير</span>
+                </h3>
+                <div class="overflow-x-auto rounded-2xl border border-kara-border">
+                    <table class="w-full text-right text-xs text-gray-300">
+                        <thead class="bg-black/60 text-white font-ibm border-b border-kara-border">
+                            <tr>
+                                <th class="p-3.5">البند المقارن</th>
+                                <th class="p-3.5 text-kara-mauveSoft">الباقة الأولى (20 مشهوراً)</th>
+                                <th class="p-3.5 text-kara-champagneLight">الباقة الثانية (50 مشهوراً)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 bg-black/30">
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">عدد المشاركين</td>
+                                <td class="p-3.5 font-bold">20 مشهوراً وصانع محتوى</td>
+                                <td class="p-3.5 font-bold text-kara-champagneLight">50 مشهوراً وصانع محتوى</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">سعر إدارة الحملة</td>
+                                <td class="p-3.5 font-bold text-white">14,000 ريال سعودي</td>
+                                <td class="p-3.5 font-bold text-kara-champagneLight">30,000 ريال سعودي</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">التوجه والأسلوب</td>
+                                <td class="p-3.5">حملة مركزة على المنتجات الأساسية</td>
+                                <td class="p-3.5">حملة أوسع انتشاراً وأشمل للمنتجات</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">الهدف الاستراتيجي</td>
+                                <td class="p-3.5">توسيع الوصول للجمهور النوعي واختبار الاستجابة</td>
+                                <td class="p-3.5">توسيع نطاق الانتشار وتنويع مصادر الحركة الشرائية</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-black/50 border border-white/5 text-[11px] text-gray-400 leading-relaxed">
+                    * ملاحظة تنظيمية: أسماء المشاركين، والمنصات، ونوع المحتوى، ورسوم المشاهير، وأي حقوق إعادة استخدام إعلاني تُحدد وتُعتمد بالتنسيق التام مع العميل قبل البدء في التنفيذ.
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 08 — INFLUENCER SELECTION CRITERIA & CREATIVE FORMATS                     -->
+        <!-- ========================================================================= -->
+        <section id="influencer-criteria" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-mauve/20 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 font-ibm">معايير الاختيار وقوالب المحتوى</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    المؤثر المناسب ليس مجرد عدد متابعين
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    نركز على ملاءمة الجمهور وطبيعة الطرح لبناء مصداقية حقيقية تنعكس على مبيعات KARA Duo
+                </p>
+            </div>
+
+            <!-- Selection Criteria (6 Pillars) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="beauty-card p-5 rounded-2xl space-y-2 border-t-2 border-kara-mauveLight">
+                    <div class="w-9 h-9 rounded-xl bg-kara-mauve/25 text-kara-mauveSoft flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">1. ملاءمة الجمهور (Audience Fit)</h3>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        توافق شريحة المتابعين مع الفتيات والسيدات المهتمات بالمكياج والعناية بالبشرة داخل السوق السعودي.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-2 border-t-2 border-kara-rose">
+                    <div class="w-9 h-9 rounded-xl bg-kara-rose/20 text-kara-rose flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-clapperboard"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">2. جودة وأسلوب المحتوى (Content Fit)</h3>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        الإتقان في التصوير والإضاءة، والقدرة على تقديم المنتجات بتلقائية وعفوية تبدد أي شعور بالإعلان المباشر.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-2 border-t-2 border-kara-champagneLight">
+                    <div class="w-9 h-9 rounded-xl bg-kara-champagne/20 text-kara-champagneLight flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">3. مستوى التفاعل الحقيقي (Engagement)</h3>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        تقييم التعليقات والأسئلة الحقيقية حول درجات الألوان والتجارب السابقة بدلاً من الاعتماد على أرقام المشاهدات فقط.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-2 border-t-2 border-kara-lilac">
+                    <div class="w-9 h-9 rounded-xl bg-kara-mauve/20 text-kara-lilac flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">4. ملاءمة المنصة لنوع المنتج</h3>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        اختيار المنصة المناسبة للقطعة؛ سناب شات للتجارب اليومية المباشرة، وتيك توك وإنستغرام ريلز للانتشار البصري.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-2 border-t-2 border-pink-400">
+                    <div class="w-9 h-9 rounded-xl bg-pink-900/30 text-pink-300 flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">5. وضوح الرسالة التسويقية</h3>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        التركيز على ميزة محددة بالمنتج (ثبات الروج، لمعان البلاشر، نعومة الفرشاة) دون تشتيت المتابعة بعدة رسائل.
+                    </p>
+                </div>
+
+                <div class="beauty-card p-5 rounded-2xl space-y-2 border-t-2 border-emerald-400">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-950/40 text-emerald-300 flex items-center justify-center text-sm font-bold">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white font-ibm">6. إمكانية قياس الأثر التجاري</h3>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        استخدام روابط تتبعية (UTM) أو أكواد خصم حصرية مخصصة لكل صانع محتوى لقياس الزيارات والطلبات المنسوبة.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Creative Content Formats for Beauty -->
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-4">
+                <h3 class="text-base font-bold text-white font-ibm">قوالب وأفكار المحتوى المقترحة لصناع المحتوى:</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-gray-300">
+                    <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                        <span class="text-kara-mauveLight font-bold block">• عرض المنتج وطريقة استخدامه:</span>
+                        <p class="text-[11px] text-gray-400">فيديو سريع يوضح دمج كريم الأساس أو استخدام بودرة الخدود والهايلايتر.</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                        <span class="text-kara-rose font-bold block">• تجربة مكياج كاملة (Get Ready With Me):</span>
+                        <p class="text-[11px] text-gray-400">تطبيق إطلالة يومية للدوام أو المناسبات باستخدام حزمة متكاملة من كارا دو.</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                        <span class="text-kara-champagneLight font-bold block">• محتوى سواتشات وتفاصيل الألوان (Swatches):</span>
+                        <p class="text-[11px] text-gray-400">لقطات مقربة لإظهار ثراء درجات أحمر الشفاه ووضوحها على درجات مختلفة للبشرة.</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                        <span class="text-kara-lilac font-bold block">• روتين العناية والتهيئة قبل المكياج:</span>
+                        <p class="text-[11px] text-gray-400">ربط مستحضرات العناية بالبشرة بطريقة تهيئة ناعمة تبرز نضارة المظهر النهائي.</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                        <span class="text-pink-300 font-bold block">• اختبار الثبات وسهولة الاستخدام:</span>
+                        <p class="text-[11px] text-gray-400">محتوى عفوي يبرز ثبات المنتجات أثناء ساعات العمل أو المناسبات الطويلة.</p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-emerald-300 font-bold block">
+                        <span class="text-emerald-300 block mb-1">• دعوة مباشرة للشراء مع كود ترويجي:</span>
+                        <p class="text-[11px] text-gray-400 font-normal">توجيه صريح لزيارة المتجر الإلكتروني مع كود خصم مخصص لتحفيز الشراء الفوري.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 09 — CUSTOMER JOURNEY: FROM DISCOVERY TO RETENTION                        -->
+        <!-- ========================================================================= -->
+        <section id="customer-journey" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-mauve/20 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 font-ibm">رحلة الشراء والتفاعل</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    رحلة عميلة KARA Duo من الاكتشاف إلى الولاء
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    كيف تقود المنظومة المتكاملة العميلة عبر مراحل الشراء الطبيعية
+                </p>
+            </div>
+
+            <!-- Interactive 5-Step Journey Flow -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- Stage 1 -->
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-4 border-kara-mauveLight text-center">
+                    <span class="w-8 h-8 mx-auto rounded-full bg-kara-mauve/30 text-kara-mauveSoft text-xs flex items-center justify-center font-bold font-mono">01</span>
+                    <h3 class="text-sm font-bold text-white font-ibm">1. الاكتشاف والوعي</h3>
+                    <span class="text-[10px] text-kara-mauveLight font-mono block">Discovery</span>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        مشاهدة مقطع ريلز جمالي جذاب أو إعلان فيديو يستعرض ثبات وألوان منتجات KARA Duo.
+                    </p>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-4 border-kara-rose text-center">
+                    <span class="w-8 h-8 mx-auto rounded-full bg-kara-rose/20 text-kara-roseSoft text-xs flex items-center justify-center font-bold font-mono">02</span>
+                    <h3 class="text-sm font-bold text-white font-ibm">2. الاهتمام والثقة</h3>
+                    <span class="text-[10px] text-kara-rose font-mono block">Interest & Trust</span>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        متابعة تجربة صانعة محتوى مفضلة تشرح سهولة دمج المنتج وملاءمته لإطلالتها اليومية.
+                    </p>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-4 border-kara-champagneLight text-center">
+                    <span class="w-8 h-8 mx-auto rounded-full bg-kara-champagne/25 text-kara-champagneLight text-xs flex items-center justify-center font-bold font-mono">03</span>
+                    <h3 class="text-sm font-bold text-white font-ibm">3. زيارة المتجر</h3>
+                    <span class="text-[10px] text-kara-champagneLight font-mono block">Store Visit</span>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        النقر على الرابط الترويجي والانتقال المباشر لصفحة الفئة أو المنتج المعروض على المتجر.
+                    </p>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-4 border-purple-400 text-center">
+                    <span class="w-8 h-8 mx-auto rounded-full bg-purple-900/40 text-purple-300 text-xs flex items-center justify-center font-bold font-mono">04</span>
+                    <h3 class="text-sm font-bold text-white font-ibm">4. إتمام الطلب</h3>
+                    <span class="text-[10px] text-purple-300 font-mono block">Purchase</span>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        إضافة المنتجات للسلة، استخدام كود الخصم، وإتمام عملية الدفع بسلاسة وأمان.
+                    </p>
+                </div>
+
+                <!-- Stage 5 -->
+                <div class="beauty-card p-5 rounded-2xl space-y-3 border-t-4 border-emerald-400 text-center sm:col-span-2 lg:col-span-1">
+                    <span class="w-8 h-8 mx-auto rounded-full bg-emerald-950/60 text-emerald-300 text-xs flex items-center justify-center font-bold font-mono">05</span>
+                    <h3 class="text-sm font-bold text-white font-ibm">5. التجربة والولاء</h3>
+                    <span class="text-[10px] text-emerald-300 font-mono block">Retention</span>
+                    <p class="text-[11px] text-gray-300 leading-relaxed">
+                        وصول المنتج، مشاركة التقييمات، وإعادة استهداف العميلة بعروض المنتجات التكميلية.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 10 — 3-MONTH STRATEGIC ROADMAP                                            -->
+        <!-- ========================================================================= -->
+        <section id="roadmap" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-champagne/20 text-kara-champagneLight text-xs font-bold border border-kara-champagne/40 font-ibm">الخطة الزمنية المرحلية</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">خارطة طريق الـ 3 أشهر</h2>
+                <p class="text-xs sm:text-sm text-gray-400">تدرج مدروس ينقل العمل من التأسيس والانطلاق إلى التوسع وتعظيم العائد</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Month 01 -->
+                <div class="beauty-card p-6 rounded-2xl space-y-5 border-t-4 border-kara-mauveLight">
+                    <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-kara-mauve/25 text-kara-mauveSoft text-xs flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-rocket"></i>
+                            </span>
+                            <span class="text-xs font-bold text-white font-ibm">MONTH 01</span>
+                        </div>
+                        <span class="text-xs text-kara-mauveLight font-ibm">التأسيس والانطلاق</span>
+                    </div>
+
+                    <div class="space-y-2 text-xs text-gray-300">
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-mauveLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">مراجعة أهداف البراند والمنتجات ذات الأولوية بالمتجر.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-mauveLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تحديد محاور المحتوى والرسائل الأساسية لكل فئة تجميلية.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-mauveLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تنظيم خطة وجدولة السوشيال ميديا وإطلاق التصاميم المعتمدة.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-mauveLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تهيئة الحسابات الإعلانية وإطلاق الحملات الأولى لاختبار التفاعل.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-mauveLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">التخطيط لحملة المشاهير وتحديد قائمة المرشحات بعد اعتماد العميل.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Month 02 -->
+                <div class="beauty-card p-6 rounded-2xl space-y-5 border-t-4 border-kara-rose">
+                    <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-kara-rose/20 text-kara-roseSoft text-xs flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-gears"></i>
+                            </span>
+                            <span class="text-xs font-bold text-white font-ibm">MONTH 02</span>
+                        </div>
+                        <span class="text-xs text-kara-rose font-ibm">التوسع والتحسين</span>
+                    </div>
+
+                    <div class="space-y-2 text-xs text-gray-300">
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-rose text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">متابعة أداء المحتوى المنشور وتفاعل الجمهور مع المنتجات.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-rose text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تطوير المواد الإعلانية الإبداعية بناءً على مؤشرات الاختبار الأولي.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-rose text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">بدء تنفيذ وجدولة نشر تعاونات المشاهير وصانعات المحتوى المعتمدة.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-rose text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تحليل المنتجات والرسائل التي تحقق أعلى معدل زيارات وطلبات.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-rose text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تكثيف حملات إعادة الاستهداف (Retargeting) للمتفاعلات مع المتجر.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Month 03 -->
+                <div class="beauty-card p-6 rounded-2xl space-y-5 border-t-4 border-kara-champagneLight">
+                    <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-kara-champagne/20 text-kara-champagneLight text-xs flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-award"></i>
+                            </span>
+                            <span class="text-xs font-bold text-white font-ibm">MONTH 03</span>
+                        </div>
+                        <span class="text-xs text-kara-champagneLight font-ibm">تعظيم الاستفادة والنمو</span>
+                    </div>
+
+                    <div class="space-y-2 text-xs text-gray-300">
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-champagneLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">مواصلة تحسين الحملات الإعلانية ومضاعفة الإنفاق على الإعلانات الرابحة.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-champagneLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تطوير أفكار المحتوى الاجتماعي بناءً على تفضيلات واهتمامات المتابعات.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-champagneLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">متابعة وحصر نتائج تعاونات المشاهير وقياس عوائد الأكواد الترويجية.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-champagneLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تقديم التقرير الختامي الشامل وتوصيات التوسع للمرحلة القادمة.</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-dot text-kara-champagneLight text-[10px] mt-1 shrink-0"></i>
+                            <span class="leading-relaxed">تحديد أفضل أنواع المؤثرين والإعلانات لتثبيتها في الخطط اللاحقة.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 11 — PERFORMANCE GOVERNANCE & KPI DASHBOARD MOCKUP                        -->
+        <!-- ========================================================================= -->
+        <section id="dashboard-kpis" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-mauve/20 text-kara-mauveSoft text-xs font-bold border border-kara-mauveLight/40 font-ibm">الشفافية الرقمية والحوكمة</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">
+                    لوحة متابعة الأداء ومؤشرات النجاح (KPIs)
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400">
+                    متابعة لحظية وموثقة لأداء المحتوى، الحملات الإعلانية، وتعاونات صناع المحتوى
+                </p>
+            </div>
+
+            <!-- Cockpit Mockup Card -->
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-kara-mauveLight/40 space-y-6 shadow-2xl">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                        <span class="text-xs font-mono text-gray-400 mr-2">KARA Duo Growth Cockpit • Live Performance Tracking</span>
+                    </div>
+                    <span class="text-xs px-3 py-1 rounded-md bg-kara-mauve/25 text-kara-mauveSoft font-bold">
+                        نموذج تقرير دوري موحد
+                    </span>
+                </div>
+
+                <!-- 3 Performance Quadrants -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-300">
+                    <!-- Social Pillar -->
+                    <div class="p-4 rounded-2xl bg-black/40 border border-kara-mauveLight/30 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-white font-ibm">1. مؤشرات السوشيال ميديا</span>
+                            <i class="fa-solid fa-camera-retro text-kara-mauveLight"></i>
+                        </div>
+                        <ul class="text-[11px] text-gray-400 space-y-1">
+                            <li>• حجم الوصول التراكمي ونمو المتابعين المهتمين.</li>
+                            <li>• التفاعل مع المنشورات ومقاطع الريلز (Likes & Shares).</li>
+                            <li>• النقرات على رابط البايو الموجه للمتجر الإلكتروني.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ads Pillar -->
+                    <div class="p-4 rounded-2xl bg-black/40 border border-kara-rose/30 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-white font-ibm">2. مؤشرات الحملات الإعلانية</span>
+                            <i class="fa-solid fa-bullhorn text-kara-rose"></i>
+                        </div>
+                        <ul class="text-[11px] text-gray-400 space-y-1">
+                            <li>• الإنفاق الإعلاني الفعلي ومعدل الوصول والمشاهدات.</li>
+                            <li>• تكلفة النقرة وزيارات صفحات المنتجات المحددة.</li>
+                            <li>• الطلبات ومعدل التحويل (Conversion Rate) عند توفر التتبع.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Influencer Pillar -->
+                    <div class="p-4 rounded-2xl bg-black/40 border border-kara-champagne/30 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-white font-ibm">3. مؤشرات المشاهير وصناع المحتوى</span>
+                            <i class="fa-solid fa-users text-kara-champagneLight"></i>
+                        </div>
+                        <ul class="text-[11px] text-gray-400 space-y-1">
+                            <li>• عدد التعاونات المنفذة وتوثيق جودة النشر.</li>
+                            <li>• المشاهدات والوصول المتاح من تقارير المنصات.</li>
+                            <li>• التفاعل والمبيعات المنسوبة لأكواد الخصم والروابط التتبعية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-black/60 border border-white/5 text-[11px] text-gray-400 leading-relaxed">
+                    * توضيح مهني: لوحة التحكم وسيلة لمتابعة الأداء واتخاذ قرارات التطوير المستمرة؛ المؤشرات المعروضة هي إطار قياس معتمد وتختلف النتائج الفعلية بحسب استجابة الجمهور، وميزانية الإعلانات المدفوعة، وجودة العروض وسلاسة تجربة المتجر.
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 12 — FINAL COMMERCIAL FRAMEWORK & INVESTMENT                              -->
+        <!-- ========================================================================= -->
+        <section id="investment" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="px-3.5 py-1 rounded-full bg-kara-champagne/20 text-kara-champagneLight text-xs font-bold border border-kara-champagne/40 font-ibm">التسعير المالي المعتمد</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm">تفاصيل الاستثمار المالي (Final Investment)</h2>
+                <p class="text-xs sm:text-sm text-gray-400">هيكل مالي واضح ومحدد يغطي إدارة الخدمات التسويقية لـ KARA Duo لمدة 3 أشهر</p>
+            </div>
+
+            <!-- Base Services Table Card -->
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-5">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3">
+                    <h3 class="text-base font-bold text-white font-ibm flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-kara-mauveLight"></i>
+                        <span>1. الخدمات الأساسية — لمدة 3 أشهر متواصلة</span>
+                    </h3>
+                    <span class="text-xs px-2.5 py-0.5 rounded-md bg-kara-mauve/25 text-kara-mauveSoft font-mono">
+                        Base Retainer Services
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl border border-kara-border">
+                    <table class="w-full text-right text-xs text-gray-300">
+                        <thead class="bg-black/60 text-white font-ibm border-b border-kara-border">
+                            <tr>
+                                <th class="p-3.5">الخدمة</th>
+                                <th class="p-3.5">المدة</th>
+                                <th class="p-3.5 text-left">قيمة الاستثمار</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 bg-black/30">
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">إدارة السوشيال ميديا وصناعة المحتوى الإبداعي</td>
+                                <td class="p-3.5">3 أشهر استراتيجية</td>
+                                <td class="p-3.5 text-left font-bold text-white font-ibm">9,000 ريال سعودي</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">إدارة الحملات الإعلانية الممولة (Media Buying & Optimization)</td>
+                                <td class="p-3.5">3 أشهر استراتيجية</td>
+                                <td class="p-3.5 text-left font-bold text-white font-ibm">9,000 ريال سعودي</td>
+                            </tr>
+                            <tr class="bg-kara-mauve/15 font-black text-white">
+                                <td class="p-3.5 font-ibm">الإجمالي للخدمتين الأساسيتين</td>
+                                <td class="p-3.5 font-ibm">3 أشهر متواصلة</td>
+                                <td class="p-3.5 text-left text-kara-mauveSoft text-sm font-ibm">18,000 ريال سعودي</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Influencer Marketing Options Table Card -->
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-5">
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3">
+                    <h3 class="text-base font-bold text-white font-ibm flex items-center gap-2">
+                        <i class="fa-solid fa-users text-kara-champagneLight"></i>
+                        <span>2. خيارات التسويق عبر المشاهير وصناع المحتوى (اختياري)</span>
+                    </h3>
+                    <span class="text-xs px-2.5 py-0.5 rounded-md bg-kara-champagne/20 text-kara-champagneLight font-mono">
+                        Influencer Campaign Options
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl border border-kara-border">
+                    <table class="w-full text-right text-xs text-gray-300">
+                        <thead class="bg-black/60 text-white font-ibm border-b border-kara-border">
+                            <tr>
+                                <th class="p-3.5">الخيار</th>
+                                <th class="p-3.5">العدد المستهدف</th>
+                                <th class="p-3.5 text-left">قيمة الاستثمار</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 bg-black/30">
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">الباقة الأولى — حملة مركزة</td>
+                                <td class="p-3.5">20 مشهوراً وصانع محتوى</td>
+                                <td class="p-3.5 text-left font-bold text-kara-mauveSoft font-ibm">14,000 ريال سعودي</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3.5 font-bold text-white">الباقة الثانية — حملة انتشار واسع</td>
+                                <td class="p-3.5">50 مشهوراً وصانع محتوى</td>
+                                <td class="p-3.5 text-left font-bold text-kara-champagneLight font-ibm">30,000 ريال سعودي</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Grand Totals Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                <!-- Package A Grand Total -->
+                <div class="beauty-card p-6 sm:p-8 rounded-3xl border-2 border-kara-mauveLight/50 text-center space-y-4 shadow-kara-glow">
+                    <span class="text-xs font-mono font-bold text-kara-mauveLight uppercase tracking-wider block">
+                        TOTAL PACKAGE A (WITH 20 INFLUENCERS)
+                    </span>
+                    <h4 class="text-base font-bold text-white font-ibm">
+                        الخدمات الأساسية + حملة 20 مشهوراً
+                    </h4>
+                    <p class="text-[11px] text-gray-400">
+                        سوشيال ميديا (9,000) + حملات ممولة (9,000) + 20 مشهوراً (14,000)
+                    </p>
+                    <div class="py-2">
+                        <div class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-kara-mauveSoft to-kara-mauveLight font-ibm">
+                            32,000
+                        </div>
+                        <span class="text-xs font-bold text-kara-mauveSoft font-ibm">ريال سعودي (SAR)</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-gray-300">
+                        خيار متوازن ومركّز يضمن حضوراً مستمراً وبناء ثقة تسويقية مستدامة.
+                    </div>
+                </div>
+
+                <!-- Package B Grand Total -->
+                <div class="beauty-card p-6 sm:p-8 rounded-3xl border-2 border-kara-champagne/60 text-center space-y-4 shadow-gold-glow">
+                    <span class="text-xs font-mono font-bold text-kara-champagneLight uppercase tracking-wider block">
+                        TOTAL PACKAGE B (WITH 50 INFLUENCERS)
+                    </span>
+                    <h4 class="text-base font-bold text-white font-ibm">
+                        الخدمات الأساسية + حملة 50 مشهوراً
+                    </h4>
+                    <p class="text-[11px] text-gray-400">
+                        سوشيال ميديا (9,000) + حملات ممولة (9,000) + 50 مشهوراً (30,000)
+                    </p>
+                    <div class="py-2">
+                        <div class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-kara-champagneLight to-kara-champagne font-ibm">
+                            48,000
+                        </div>
+                        <span class="text-xs font-bold text-kara-champagneLight font-ibm">ريال سعودي (SAR)</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-gray-300">
+                        خيار موسّع للانتشار الواسع وإحداث زخم تجميلي كبير على مستوى المملكة.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes & Clarifications -->
+            <div class="p-4 rounded-2xl bg-black/60 border border-white/10 text-xs text-gray-400 space-y-1.5 leading-relaxed">
+                <div class="flex items-center gap-2 text-kara-champagneLight font-bold">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>ملاحظات وإيضاحات مالية هامة:</span>
+                </div>
+                <p>• يمكن للعميل اعتماد الخدمات الأساسية وحدها (18,000 ريال لمدة 3 أشهر) أو إضافة أي من باقتي المشاهير بحسب الأهداف والميزانية.</p>
+                <p>• ميزانية الإنفاق الإعلاني المدفوعة للمنصات (Meta, TikTok, Snapchat) تُحدد وتُعتمد بصورة منفصلة وتُدفع للمنصات مباشرة.</p>
+                <p>• الإجماليات تجمع الأسعار المعطاة فقط ولا تشمل أي رسوم أو تكاليف إضافية غير مذكورة دون اتفاق خطي مسبق.</p>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 13 — EXECUTIVE CLOSING & PARTNERSHIP FOUNDATION                           -->
+        <!-- ========================================================================= -->
+        <section id="closing" class="relative rounded-3xl overflow-hidden p-8 sm:p-14 glass-panel border border-kara-mauveLight/40 text-center space-y-8 shadow-2xl">
+            <div class="kara-ribbon absolute top-0 left-0 right-0"></div>
+
+            <div class="max-w-3xl mx-auto space-y-5">
+                <div class="w-20 h-20 mx-auto rounded-3xl overflow-hidden border-2 border-kara-mauveLight/60 p-1 bg-black/80 shadow-kara-glow">
+                    <img src="https://i.ibb.co/JwXvMNpN/Karaduo.jpg" alt="KARA Duo Brand Logo" class="w-full h-full object-cover rounded-2xl" onerror="this.src='https://placehold.co/100x100/1d122b/c084fc?text=KARA+Duo'">
+                </div>
+
+                <div class="inline-flex items-center gap-2 text-xs font-bold text-kara-champagneLight font-ibm">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>KARA Duo × KAAF Group • شراكة نمو مستدامة في قطاع الجمال</span>
+                </div>
+
+                <h2 class="text-2xl sm:text-4xl font-black text-white font-ibm leading-relaxed sm:leading-loose">
+                    «نطمح في KAAF إلى بناء شراكة تسويقية مع KARA Duo، تجمع بين المحتوى الإبداعي، والإعلانات المدروسة، والتعاون مع صناع المحتوى؛ بهدف تطوير الحضور الرقمي للبراند، وتحسين فرص الوصول إلى العملاء المناسبين، وبناء أساس واضح للتوسع المستقبلي».
+                </h2>
+
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal max-w-2xl mx-auto">
+                    تم إعداد هذا العرض ليكون خارطة طريق تنفيذية متكاملة تضمن أعلى درجات التنسيق بين الإبداع البصري، وقوة الوصول الإعلاني، ومصداقية تجارب المؤثرين؛ لتوجيه الاهتمام نحو المتجر الإلكتروني وتحقيق نمو ملموس وقابل للقياس.
+                </p>
+            </div>
+
+            <!-- Footer Details & Link -->
+            <div class="pt-6 border-t border-white/10 text-xs text-gray-400 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-white">KARA Duo | كارا دو</span>
+                    <span class="text-gray-500">•</span>
+                    <a href="https://karaduo.com/" target="_blank" class="text-kara-champagneLight hover:underline font-mono">karaduo.com</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-kaaf-cyanLight">KAAF Group</span>
+                    <span class="text-gray-500">•</span>
+                    <span class="font-ibm">Marketing, Software & Media Solutions</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Brand Logo (Left) -->
+    <aside class="fixed bottom-6 left-6 z-40">
+        <a href="https://karaduo.com/" target="_blank" title="زيارة متجر KARA Duo الرسمي" class="block w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-kara-mauveLight/80 p-0.5 bg-black/95 animate-float-beauty shadow-2xl hover:scale-110 active:scale-95 transition">
+            <img src="https://i.ibb.co/JwXvMNpN/Karaduo.jpg" alt="KARA Duo Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/80x80/1d122b/c084fc?text=KARA'">
+        </a>
+    </aside>
+
+    <!-- Floating WhatsApp Action (Right) -->
+    <aside class="fixed bottom-6 right-6 z-40">
+        <a href="https://wa.me/966558029554" target="_blank" title="تواصل مباشر للاستفسار والمناقشة التنفيذية" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center border-2 border-emerald-300/70 animate-float-wa shadow-2xl hover:scale-110 active:scale-95 transition">
+            <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+        </a>
+    </aside>
+
+    <script>
+        // Interactive Beauty Particle Canvas (Mauve, Rose, Lilac, Champagne)
+        (function() {
+            const canvas = document.getElementById('beauty-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            const particleCount = 42;
+            const colors = ['#9333ea', '#c084fc', '#f43f5e', '#d8b4fe', '#d4af37'];
+
+            const mouse = {
+                x: null,
+                y: null,
+                radius: 130
+            };
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            window.addEventListener('mouseout', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 0) {
+                    mouse.x = e.touches[0].clientX;
+                    mouse.y = e.touches[0].clientY;
+                }
+            }, { passive: true });
+
+            window.addEventListener('touchend', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.baseVx = (Math.random() - 0.5) * 0.4;
+                    this.baseVy = (Math.random() - 0.5) * 0.4;
+                    this.vx = this.baseVx;
+                    this.vy = this.baseVy;
+                    this.baseRadius = Math.random() * 2 + 1.2;
+                    this.radius = this.baseRadius;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.baseAlpha = Math.random() * 0.35 + 0.2;
+                    this.alpha = this.baseAlpha;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > width) {
+                        this.vx *= -1;
+                        this.baseVx *= -1;
+                    }
+                    if (this.y < 0 || this.y > height) {
+                        this.vy *= -1;
+                        this.baseVy *= -1;
+                    }
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            const angle = Math.atan2(dy, dx);
+                            this.x -= Math.cos(angle) * force * 3.2;
+                            this.y -= Math.sin(angle) * force * 3.2;
+
+                            this.radius = this.baseRadius + force * 4.2;
+                            this.alpha = Math.min(1, this.baseAlpha + force * 0.65);
+                        } else {
+                            if (this.radius > this.baseRadius) this.radius -= 0.12;
+                            if (this.alpha > this.baseAlpha) this.alpha -= 0.02;
+                        }
+                    } else {
+                        if (this.radius > this.baseRadius) this.radius -= 0.12;
+                        if (this.alpha > this.baseAlpha) this.alpha -= 0.02;
+                    }
+
+                    this.vx = this.vx * 0.98 + this.baseVx * 0.02;
+                    this.vy = this.vy * 0.98 + this.baseVy * 0.02;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, Math.max(0.5, this.radius), 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = this.alpha;
+                    ctx.fill();
+
+                    if (this.radius > this.baseRadius + 0.8) {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius + 3, 0, Math.PI * 2);
+                        ctx.strokeStyle = this.color;
+                        ctx.globalAlpha = (this.alpha - this.baseAlpha) * 0.4;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function connect() {
+                const maxDist = 135;
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        const dx = particles[a].x - particles[b].x;
+                        const dy = particles[a].y - particles[b].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < maxDist) {
+                            let linkAlpha = (1 - (dist / maxDist)) * 0.15;
+
+                            if (mouse.x !== null && mouse.y !== null) {
+                                const distA = Math.hypot(mouse.x - particles[a].x, mouse.y - particles[a].y);
+                                const distB = Math.hypot(mouse.x - particles[b].x, mouse.y - particles[b].y);
+                                if (distA < mouse.radius || distB < mouse.radius) {
+                                    linkAlpha = Math.min(0.55, linkAlpha * 2.6);
+                                }
+                            }
+
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.strokeStyle = '#c084fc';
+                            ctx.globalAlpha = linkAlpha;
+                            ctx.lineWidth = 0.85;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                connect();
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        // Reading Scroll Progress & ScrollSpy
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar = document.getElementById('progressBar');
+            window.addEventListener('scroll', () => {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (totalHeight > 0 && progressBar) {
+                    const progress = (window.scrollY / totalHeight) * 100;
+                    progressBar.style.width = `${progress}%`;
+                }
+            });
+
+            // Mobile Menu Handlers
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const mobileIcon = document.getElementById('mobileIcon');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav');
+
+            if (mobileMenuBtn && mobileDrawer) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isHidden = mobileDrawer.classList.contains('hidden');
+                    mobileDrawer.classList.toggle('hidden');
+                    mobileIcon.className = isHidden ? 'fa-solid fa-xmark text-base text-kara-mauveLight' : 'fa-solid fa-bars text-base';
+                });
+
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileDrawer.classList.add('hidden');
+                        mobileIcon.className = 'fa-solid fa-bars text-base';
+                    });
+                });
+            }
+
+            // Scrollspy Active Navigation
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === `#${currentId}`) {
+                                link.classList.add('nav-item-active');
+                            } else {
+                                link.classList.remove('nav-item-active');
+                            }
+                        });
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '-20% 0px -65% 0px',
+                threshold: 0
+            });
+
+            sections.forEach(s => observer.observe(s));
+        });
+    </script>
+</body>
+</html>
